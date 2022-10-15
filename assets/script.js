@@ -145,10 +145,7 @@ const BankAccountNumber = document.querySelector('.account_number').innerHTML = 
 
 // nameValidation.innerHTML  =accountName;
 
-const obscureEmail = (account_name) => {
-    const [name, domain] = accountName.split('@');
-    return `${name[0]}${new Array(name.length).join('*')}@${domain}`;
-  };   
+
 
 
     const successful = document.querySelector('.successful');
