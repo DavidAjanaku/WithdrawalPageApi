@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Withdrawal Page </h1>
+
+   
+    <form id="myForm" id="application">
+        <label class="withdraw amount">Withdraw To   </label>
+        <input type="text" class="withdraw-options  bankCodes bank" id="BankName" list="banks" placeholder="Bank name">
+        <datalist id="banks"></datalist>
+ 
+
+        
+        <label class="  ">Amount(NGN)</label>
+        <p class="bank_error">
+            
+        </p>
+        <input type="number" id="Amount" class="withdraw-options" placeholder=" number" pattern="[0-9]{10}">
+
+        <label for="">Account Number</label>
+        <input type="number" id="AccountNumber"  min="0"  placeholder="Account Number" class="withdraw-options">
+
+
+       <div class="btn-container">
+        <input type="submit" class="submit-btn  btn-open" onclick="mode()">
+       </div> 
+       
+
+    </form>
+
+    <section class="modal hidden">
+        <div class="flex">
+         
+          <button class="btn-close">⨉</button>
+        </div>
+        <div>
+          <h3>Confirm to Withdraw</h3>
+        
+        </div>
+      
+        <div class="account_details">
+            <div class="account_info">
+                <span><b>Amount(NGN)</b></span>
+                <span class="account_amount">   </span>
+            </div>
+            <div class="account_info">
+                <span><b> Bank Name</b></span>
+                <span class="account_bank"> </span>
+            </div>
+            <div class="account_info">
+                <span><b> Account  Number</b></span>
+                <span class="account_number"></span>
+            </div>
+            <div class="account_info">
+                <span><b> Account  Name</b></span>
+                <span class="user_name"></span>
+            </div>
+        </div>
+        
+
+        <p>Note: THe money will transfer to your bank account</p>
+
+        <input type="submit" class="btn  successful" value="Submit">
+      </section>
+
+      <div class="overlay hidden"></div>
+    <div class="contents">
+        <p class="balance">Balance(NGN):0.36</p>
+       <b><p class="w-balance">Withdrawable Balance(NGN): 0.36</p></b> 
+    </div>
+    <div class="contents-2">
+        <p>1. Minimum per transaction is NGN 1.00.</p>
+        <p>2. Maximum per transcation is NGN 9,999,999.00.</p>
+        <p>3. Withdrawal is free, no transcation fees.</p>
+    </div>
+
+</div>
+
+
+<script src="assets/modal.js"></script>
+
+    <script src="assets/script.js"></script>
+    <script src="assets/authentication.js"></script>
+</body>
+</html>
