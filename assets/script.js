@@ -1,5 +1,8 @@
 // GETTING LIST OF BANKS
 
+
+// FETCHING BANKS
+
 const banksDataList = document.querySelector('#banks');
 const bank = document.querySelector('.bank');
 let bankOptions = [];
@@ -20,6 +23,9 @@ fetch('https://lancerspointdemo.herokuapp.com/get-banks/')
     banksDataList.innerHTML = options;
 })
 .catch(err => console.error(err.message));
+
+
+
 
 
 
@@ -90,6 +96,8 @@ bank.addEventListener('change', function () {
 myForm.addEventListener('submit', function(e){
     e.preventDefault();
 
+  
+
     const amount =  +document.getElementById('Amount').value;
     const acc_no =Number (document.getElementById('AccountNumber').value);
     const formData = {
@@ -101,7 +109,14 @@ myForm.addEventListener('submit', function(e){
     }
 
 
+
+
+
+// GETTING THE NAMES USING DOM
+
 const account_amount = document.querySelector('.account_amount').innerHTML = amount;
+
+
 
 const bankBranch = document.querySelector('.account_bank').innerHTML = bank.value
 
@@ -111,6 +126,12 @@ const BankAccountNumber = document.querySelector('.account_number').innerHTML = 
 
     console.log(formData);
     console.log(formData.bank_code);
+
+
+
+
+
+    // POSTING THE DETAILS INPUTED DROM THE USER
 
 
     // const formData = new FormData(this);
@@ -146,6 +167,14 @@ const BankAccountNumber = document.querySelector('.account_number').innerHTML = 
 // nameValidation.innerHTML  =accountName;
 
 
+
+
+
+
+
+
+
+// CONFIRMING THE DETAILS SENT TO THE API BEFORE WITHDRAWING
 
 
     const successful = document.querySelector('.successful');
