@@ -145,41 +145,47 @@ const BankAccountNumber = document.querySelector('.account_number').innerHTML = 
 
 // nameValidation.innerHTML  =accountName;
 
-   
-//     const successful = document.querySelector('.successful');
+const obscureEmail = (account_name) => {
+    const [name, domain] = accountName.split('@');
+    return `${name[0]}${new Array(name.length).join('*')}@${domain}`;
+  };   
+
+
+    const successful = document.querySelector('.successful');
     
     
-//     successful.addEventListener('click', function(e){
+    successful.addEventListener('click', function(e){
 
-//         e.preventDefault()
-//         console.log('sucess');
-//         const account_name = nameValidation.textContent;
+        e.preventDefault()
+        console.log('sucess');
+        const account_name = nameValidation.textContent;
 
-//         const amount =  +document.getElementById('Amount').value;
-//         const account_number =Number (document.getElementById('AccountNumber').value);
-//         const formData = {
-//             amount,
-//             account_name,
-//             account_number,
-//             bank_code: code,
+        const amount =  +document.getElementById('Amount').value;
+        const account_number =Number (document.getElementById('AccountNumber').value);
+        const formData = {
+            amount,
+            account_name,
+            account_number,
+            bank_code: code,
+            confirm: true
         
     
            
-//         }
+        }
 
-//         console.log(nameValidation.textContent);
+        console.log(nameValidation.textContent);
 
 
-//         fetch('https://lancerspointdemo.herokuapp.com/resolve-bank-pay/',{
-//             method : 'POST',
-//             headers: {
-//              accept: 'application/json'},
-//             body: JSON.stringify(formData)
-//         }).then((res) => res.json()).then((data)=> {
-//             console.log(data);
+        fetch('https://lancerspointdemo.herokuapp.com/resolve-bank-pay/',{
+            method : 'POST',
+            headers: {
+             accept: 'application/json'},
+            body: JSON.stringify(formData)
+        }).then((res) => res.json()).then((data)=> {
+            console.log(data);
 
-//             console.log(formData);
-//             console.log('sucess');
+            console.log(formData);
+            console.log('sucessful');
     
-//         })
-//       })
+        })
+      })
